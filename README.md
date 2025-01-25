@@ -1,1 +1,5 @@
 # ink-spot
+
+NPM INSTALL
+NPX PRISMA MIGRATE DEV --name init
+NPX AUTH SECRET
