@@ -1,6 +1,6 @@
-import { withAuth } from "next-auth/middleware"
-import { NextResponse } from "next/server"
-
+import { withAuth } from "next-auth/middleware";
+import { NextResponse } from "next/server";
+import authOptions from "./nextauth";
 export default withAuth(
   function middleware(req) {
     const url = req.nextUrl.clone();
@@ -23,11 +23,12 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => !!token,
+      authorized: ({ token }) => !!token, // Si un token existe, l'utilisateur est autorisé
     },
     pages: {
-      signIn: "/login",
+      signIn: "/login", // Redirection vers la page de connexion
     },
+    ...authOptions, // Ajout des options NextAuth
   }
 );
 

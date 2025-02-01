@@ -1,6 +1,6 @@
 "use client"
 
-import { Search, Grid2X2, MessageSquare, User, Home } from 'lucide-react'
+import { Search, Grid2X2, MessageSquare, User, Home, LayoutGrid, BadgePlus } from 'lucide-react'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -20,16 +20,6 @@ export function NavigationBar() {
         >
           <Home size={24} />
         </Link>
-
-        <Link 
-          href="/search" 
-          className={cn(
-            "flex flex-col items-center p-2 rounded-lg",
-            pathname === "/search" && "text-primary"
-          )}
-        >
-          <Search size={24} />
-        </Link>
         <Link 
           href="/discover" 
           className={cn(
@@ -37,7 +27,17 @@ export function NavigationBar() {
             pathname === "/discover" && "text-primary"
           )}
         >
-          <Grid2X2 size={24} />
+          <LayoutGrid size={24} />
+        </Link>
+
+        <Link 
+          href="/create"
+          className={cn(
+            "flex flex-col items-center p-2 rounded-lg",
+            pathname === "/create" && "text-primary"
+          )}
+        >
+          <BadgePlus size={24} />
         </Link>
         <Link 
           href="/messages" 
